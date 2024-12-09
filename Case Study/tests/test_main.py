@@ -7,7 +7,7 @@ import pandas as pd
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
 # Import load_data function from your main script
-from groupcasestudy_yushin_huishan import load_data
+from src.groupcasestudy_yushin_huishan import load_data
 
 # Test function to check if duplicates are removed in the processed data
 def test_no_duplicates():
