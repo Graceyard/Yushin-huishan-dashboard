@@ -26,5 +26,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # Set PYTHONPATH to include the 'Case Study/src' directory
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$(pwd)/Case\ Study/src" >> $GITHUB_ENV
+
+      - name: List files in repository
+        run: |
+          ls -l "Case Study"
+          ls -l "Case Study/src"
+          ls -l "Case Study/tests"
+
       - name: Run Tests
-        run: pytest tests/ -v
+        run: pytest "Case Study/tests/" -v
