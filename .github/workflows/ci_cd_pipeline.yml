@@ -19,18 +19,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: '3.x'  # Use '3.x' to always use the latest minor version
+          python-version: '3.x'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Add this step to list the files in the repository and check if 'Case Study/tests/' exists
-      - name: List files in repository
-        run: |
-          ls -l "Case Study"
-          ls -l "Case Study/tests"
-
       - name: Run Tests
-        run: pytest "Case Study/tests/" -v
+        run: pytest tests/ -v
